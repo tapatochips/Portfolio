@@ -1,13 +1,21 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import Home from './components/Home';
-import './index.css';
+import ReactDOM from 'react-dom/client'; // Updated import for React 18
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import './styles.css'; // Import your main CSS file
 
-ReactDOM.render(<App />, document.getElementById('root'));
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// Ensure the DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+  // Find the root element
+  const rootElement = document.getElementById('root');
+  if (rootElement) {
+    // Create a root and render the app
+    const root = ReactDOM.createRoot(rootElement);
+    root.render(
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    );
+  } else {
+    console.error("Root element not found");
+  }
+});
