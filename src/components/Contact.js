@@ -62,7 +62,7 @@ const Contact = () => {
     };
   
     return (
-      <section id="contact">
+      <section id="contact" style={{ color: 'white' }}>
         <h2>Contact</h2>
         <form onSubmit={handleSubmit}>
           <label htmlFor="name">Name:</label>

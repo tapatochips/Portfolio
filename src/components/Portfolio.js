@@ -7,11 +7,12 @@ const projects = [
     { id: 3, title: 'Project Three', description: "Description of project three", image: '/path-to-image1', link: '/path-to-link'},
     { id: 4, title: 'Project Four', description: "Description of project four", image: '/path-to-image1', link: '/path-to-link'},
     { id: 5, title: 'Project Five', description: "Description of project five", image: '/path-to-image1', link: '/path-to-link'},
+    { id: 5, title: 'Project Six', description: "Description of project six", image: '/path-to-image1', link: '/path-to-link'},
 ]
 
 const Portfolio = () => (
     <section id="portfolio">
-        <h2>Portfolio</h2>
+        <h2 style={{ color: 'white' }}>Portfolio</h2>
         <div className="project-cards" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '20px', padding: '20px' }}>
       {projects.map(project => (
         <div className="card" key={project.id} style={{ background: '#fff', padding: '20px', boxShadow: '0 4px 8px rgba(0,0,0,0.1)', borderRadius: '8px', textAlign: 'center' }}>
