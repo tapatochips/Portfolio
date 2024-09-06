@@ -2,12 +2,12 @@ import React from "react";
 
 //example projects for now
 const projects = [
-    { id: 1, title: 'Project One', description: "Description of project one", image: '/path-to-image1', link: '/path-to-link'},
-    { id: 2, title: 'Project Two', description: "Description of project two", image: '/path-to-image1', link: '/path-to-link'},
-    { id: 3, title: 'Project Three', description: "Description of project three", image: '/path-to-image1', link: '/path-to-link'},
-    { id: 4, title: 'Project Four', description: "Description of project four", image: '/path-to-image1', link: '/path-to-link'},
-    { id: 5, title: 'Project Five', description: "Description of project five", image: '/path-to-image1', link: '/path-to-link'},
-    { id: 5, title: 'Project Six', description: "Description of project six", image: '/path-to-image1', link: '/path-to-link'},
+    { id: 1, title: 'Balance Check Calculator', description: "This project I created for my current job to help ease calculations needed for confirming the amount due when customers are past due.", image: '/path-to-image1', link: '/path-to-link'},
+    { id: 2, title: 'Finance/banking app', description: "This project allows users to create an account and help them track their finances", image: '/path-to-image1', link: '/path-to-link'},
+    { id: 3, title: 'React-Native Weather app', description: "This app displays the weather for the users current location", image: '/path-to-image1', link: '/path-to-link'},
+    { id: 4, title: 'Modernized Business Website', description: "My friend wanted me to try to modernize their personal business website, I have not hosted this site as we never came to an agreement of payment.", image: '/path-to-image1', link: '/path-to-link'},
+    { id: 5, title: 'Pokemon Pokedex', description: "Users are able to search the pokedex for any pokemon and save them to their favorites.", image: '/path-to-image1', link: '/path-to-link'},
+    
 ]
 
 const Portfolio = () => (
