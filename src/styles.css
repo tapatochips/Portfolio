@@ -16,6 +16,11 @@ header {
 form {
     display: flex;
     flex-direction: column;
+    width: '700px';
+    align-items: center; 
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 40px;
 }
 
 label {
