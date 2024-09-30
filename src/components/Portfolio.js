@@ -2,7 +2,7 @@ import React from "react";
 
 //example projects for now
 const projects = [
-    { id: 1, title: 'Balance Check Calculator', description: "This project I created for my current job to help ease calculations needed for confirming the amount due when customers are past due.", image: '/path-to-image1', link: '/path-to-link'},
+    { id: 1, title: 'Balance Check Calculator', description: "lorem ipsum", image: '/path-to-image1', link: '/path-to-link'},
     { id: 2, title: 'Finance/banking app', description: "This project allows users to create an account and help them track their finances", image: '/path-to-image1', link: '/path-to-link'},
     { id: 3, title: 'React-Native Weather app', description: "This app displays the weather for the users current location", image: '/path-to-image1', link: '/path-to-link'},
     { id: 4, title: 'Modernized Business Website', description: "My friend wanted me to try to modernize their personal business website, I have not hosted this site as we never came to an agreement of payment.", image: '/path-to-image1', link: '/path-to-link'},
