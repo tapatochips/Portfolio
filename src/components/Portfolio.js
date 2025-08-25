@@ -2,11 +2,8 @@ import React from "react";
 
 //example projects for now
 const projects = [
-    { id: 1, title: 'Balance Check Calculator', description: "lorem ipsum", image: '/path-to-image1', link: '/path-to-link'},
-    { id: 2, title: 'Finance/banking app', description: "This project allows users to create an account and help them track their finances", image: '/path-to-image1', link: '/path-to-link'},
-    { id: 3, title: 'React-Native Weather app', description: "This app displays the weather for the users current location", image: '/path-to-image1', link: '/path-to-link'},
-    { id: 4, title: 'Modernized Business Website', description: "My friend wanted me to try to modernize their personal business website, I have not hosted this site as we never came to an agreement of payment.", image: '/path-to-image1', link: '/path-to-link'},
-    { id: 5, title: 'Pokemon Pokedex', description: "Users are able to search the pokedex for any pokemon and save them to their favorites.", image: '/path-to-image1', link: '/path-to-link'},
+  { id: 1, title: 'Thoughts with God', description: "This is a personal app that I have made and deployed on both Apple and Google play stores", image: '/verseDisplay.png', link: '/path-to-link'},
+    { id: 2, title: 'Balance Check Calculator', description: "This app I can't show as it is for work purposes, however; it essentially is a tool to assist the billing department with their calculations for an updated amount due on past due accounts.", image: '/path-to-image1', link: '/path-to-link'},
     
 ]
 
