@@ -1,15 +1,16 @@
 import { useState } from 'react';
 
 const inputStyle = {
-  background: '#1e1e2e',
-  border: '1px solid #2d2d44',
+  background: '#16162a',
+  border: '1px solid #2d2d50',
   borderRadius: '8px',
   color: '#fff',
-  padding: '10px 14px',
+  padding: '11px 14px',
   fontSize: '0.95rem',
   width: '100%',
   outline: 'none',
   marginTop: '6px',
+  fontFamily: 'inherit',
 };
 
 const Contact = () => {
@@ -57,12 +58,12 @@ const Contact = () => {
 
   return (
     <section id="contact" style={{
-      background: '#0f0f1f',
-      padding: '100px 20px',
+      background: 'linear-gradient(180deg, #0d0d1a 0%, #0a0a18 100%)',
+      padding: '110px 20px',
       textAlign: 'center',
     }}>
-      <h2 style={{ color: '#fff', fontSize: '2rem', marginBottom: '12px' }}>Contact</h2>
-      <div style={{ width: '48px', height: '3px', background: '#7b93fd', margin: '0 auto 40px', borderRadius: '2px' }} />
+      <h2 className="section-title">Contact</h2>
+      <div className="section-divider" />
 
       <form
         onSubmit={handleSubmit}
@@ -86,6 +87,7 @@ const Contact = () => {
             value={formData.name}
             onChange={handleChange}
             required
+            className="form-input"
             style={inputStyle}
           />
         </div>
@@ -100,6 +102,7 @@ const Contact = () => {
             value={formData.email}
             onChange={handleChange}
             required
+            className="form-input"
             style={inputStyle}
           />
         </div>
@@ -114,6 +117,7 @@ const Contact = () => {
             onChange={handleChange}
             required
             rows={5}
+            className="form-input"
             style={{ ...inputStyle, resize: 'vertical' }}
           />
         </div>
@@ -123,8 +127,9 @@ const Contact = () => {
         <button
           type="submit"
           disabled={isLoading}
+          className={isLoading ? '' : 'btn-primary'}
           style={{
-            background: isLoading ? '#4a5490' : '#7b93fd',
+            background: isLoading ? '#3a3a60' : '#7b93fd',
             color: '#fff',
             border: 'none',
             borderRadius: '8px',
@@ -132,7 +137,7 @@ const Contact = () => {
             fontSize: '1rem',
             fontWeight: 600,
             cursor: isLoading ? 'not-allowed' : 'pointer',
-            transition: 'background 0.2s',
+            width: '100%',
           }}
         >
           {isLoading ? 'Sending...' : 'Send Message'}
