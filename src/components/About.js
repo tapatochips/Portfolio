@@ -25,7 +25,7 @@ const About = () => (
       <p style={{ color: '#a0a0b0', lineHeight: '1.8', marginBottom: '40px', fontSize: '1rem' }}>
         Hello! I am a self-taught Full-Stack Developer currently pursuing a degree in Computer Science.
         I enjoy building accessible, well-designed applications and have experience across multiple
-        languages, frameworks, and platforms.
+        languages, frameworks, and platforms!
       </p>
 
       <h3 style={{ color: '#7b93fd', marginBottom: '16px', fontSize: '1rem', textTransform: 'uppercase', letterSpacing: '1px' }}>
