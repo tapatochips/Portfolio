@@ -47,7 +47,7 @@ const projects = [
   {
     id: 3,
     title: 'College Work',
-    description: 'This Repo contains projects from my all of my college coursework. At this time I am unable to provide images of these projects.',
+    description: 'This Repo contains projects from my all of my college coursework. At this time I provide images of these projects down the road but feel free to review the github repo by clicking on View Project!',
     features: [
       'In college I have completed projects in a variety of languages and frameworks, including Java, C++, Python, C#, SQL.',
     ],
@@ -69,14 +69,14 @@ const ImageCarousel = ({ screenshots, title }) => {
     position: 'absolute',
     top: '50%',
     transform: 'translateY(-50%)',
-    background: 'rgba(0,0,0,0.5)',
+    background: 'rgba(0,0,0,0.55)',
     color: '#fff',
     border: 'none',
     borderRadius: '50%',
-    width: '32px',
-    height: '32px',
+    width: '34px',
+    height: '34px',
     cursor: 'pointer',
-    fontSize: '1rem',
+    fontSize: '1.1rem',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -90,8 +90,8 @@ const ImageCarousel = ({ screenshots, title }) => {
         alt={`${title} screenshot ${index + 1}`}
         style={{ width: '100%', height: '100%', objectFit: 'contain' }}
       />
-      <button onClick={prev} style={{ ...btnStyle, left: '8px' }}>‹</button>
-      <button onClick={next} style={{ ...btnStyle, right: '8px' }}>›</button>
+      <button onClick={prev} className="carousel-btn" style={{ ...btnStyle, left: '8px' }}>‹</button>
+      <button onClick={next} className="carousel-btn" style={{ ...btnStyle, right: '8px' }}>›</button>
       <div style={{
         position: 'absolute',
         bottom: '8px',
@@ -120,14 +120,21 @@ const ImageCarousel = ({ screenshots, title }) => {
   );
 };
 const Portfolio = () => (
-  <section id="portfolio" style={{ padding: '40px 20px' }}>
-    <h2 style={{ color: 'white', marginBottom: '30px' }}>Portfolio</h2>
+  <section id="portfolio" style={{
+    background: 'linear-gradient(180deg, #111128 0%, #0d0d1a 100%)',
+    padding: '110px 40px',
+    textAlign: 'center',
+  }}>
+    <h2 className="section-title">Portfolio</h2>
+    <div className="section-divider" />
     <div
       className="project-cards"
       style={{
         display: 'grid',
         gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
-        gap: '24px',
+        gap: '28px',
+        maxWidth: '1200px',
+        margin: '0 auto',
       }}
     >
       {projects.map(project => (
@@ -135,10 +142,11 @@ const Portfolio = () => (
           className="card"
           key={project.id}
           style={{
-            background: '#1e1e2e',
-            borderRadius: '12px',
+            background: '#16162a',
+            border: '1px solid rgba(123, 147, 253, 0.1)',
+            borderRadius: '16px',
             overflow: 'hidden',
-            boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
+            boxShadow: '0 4px 24px rgba(0,0,0,0.35)',
             display: 'flex',
             flexDirection: 'column',
           }}
@@ -185,15 +193,11 @@ const Portfolio = () => (
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="btn-primary"
                 style={{
-                  display: 'inline-block',
-                  background: '#7b93fd',
-                  color: '#fff',
-                  padding: '8px 20px',
-                  borderRadius: '6px',
-                  textDecoration: 'none',
-                  fontWeight: 'bold',
-                  fontSize: '0.9rem',
+                  padding: '9px 22px',
+                  fontSize: '0.88rem',
+                  borderRadius: '8px',
                 }}
               >
                 View Project

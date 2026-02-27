@@ -2,3 +2,62 @@
   background-color: #0d0d1a;
   min-height: 100vh;
 }
+
+/* ── Cards ─────────────────────────────────────────────────── */
+.card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(123, 147, 253, 0.18);
+}
+
+/* ── Primary button / link ──────────────────────────────────── */
+.btn-primary {
+  display: inline-block;
+  background: #7b93fd;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+.btn-primary:hover {
+  background: #9aaafe;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(123, 147, 253, 0.4);
+}
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* ── Skill / tech tags ──────────────────────────────────────── */
+.skill-tag {
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+  cursor: default;
+}
+.skill-tag:hover {
+  border-color: #7b93fd !important;
+  background: #252542 !important;
+  color: #c5d0ff !important;
+}
+
+/* ── Form inputs ────────────────────────────────────────────── */
+.form-input {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.form-input:focus {
+  outline: none;
+  border-color: #7b93fd !important;
+  box-shadow: 0 0 0 3px rgba(123, 147, 253, 0.18);
+}
+
+/* ── Carousel nav buttons ───────────────────────────────────── */
+.carousel-btn {
+  transition: background 0.15s ease;
+}
+.carousel-btn:hover {
+  background: rgba(123, 147, 253, 0.6) !important;
+}
