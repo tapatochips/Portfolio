@@ -18,8 +18,8 @@ const Header = () => (
       Daniel / Tapatochips LLC
     </span>
     <nav>
-      <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', gap: '32px' }}>
-        {['Home', 'About', 'Portfolio', 'Contact'].map(item => (
+      <ul style={{ listStyle: 'none', padding: 20, margin: 50, display: 'flex', gap: '32px' }}>
+        {['Home', 'About', 'Portfolio'].map(item => (
           <li key={item}>
             <a
               href={`#${item.toLowerCase()}`}

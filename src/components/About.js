@@ -32,7 +32,7 @@ const About = () => (
         Languages
       </h3>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', justifyContent: 'center', marginBottom: '32px' }}>
-        {['JavaScript', 'Python', 'Java', 'C++', 'C#'].map(lang => (
+        {['JavaScript', 'TypeScript', 'Python', 'Java', 'C++', 'C#'].map(lang => (
           <Tag key={lang} label={lang} />
         ))}
       </div>
@@ -41,7 +41,7 @@ const About = () => (
         Frameworks & Libraries
       </h3>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', justifyContent: 'center' }}>
-        {['React', 'React Native', 'MongoDB', 'Express', 'Jinja'].map(fw => (
+        {['React', 'React Native', 'MongoDB', 'Firebase', 'Express', 'Node.js', 'Jinja'].map(fw => (
           <Tag key={fw} label={fw} />
         ))}
       </div>
