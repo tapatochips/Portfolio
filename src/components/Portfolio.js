@@ -1,28 +1,181 @@
-import React from "react";
+import { useState } from "react";
 
-//example projects for now
 const projects = [
-    { id: 1, title: 'Balance Check Calculator', description: "lorem ipsum", image: '/path-to-image1', link: '/path-to-link'},
-    { id: 2, title: 'Finance/banking app', description: "This project allows users to create an account and help them track their finances", image: '/path-to-image1', link: '/path-to-link'},
-    { id: 3, title: 'React-Native Weather app', description: "This app displays the weather for the users current location", image: '/path-to-image1', link: '/path-to-link'},
-    { id: 4, title: 'Modernized Business Website', description: "My friend wanted me to try to modernize their personal business website, I have not hosted this site as we never came to an agreement of payment.", image: '/path-to-image1', link: '/path-to-link'},
-    { id: 5, title: 'Pokemon Pokedex', description: "Users are able to search the pokedex for any pokemon and save them to their favorites.", image: '/path-to-image1', link: '/path-to-link'},
-    
-]
+  {
+    id: 1,
+    title: 'Thoughts With God',
+    description: 'A React Native app for daily Bible verses, prayer management, and spiritual reflection. Built with a Firebase backend and designed with accessibility in mind.',
+    features: [
+      'Daily Bible verses from a complete Bible database',
+      'Prayer board with community & personal tracking',
+      'Favorites management for saved verses',
+      'Light, Dark, and Sepia themes',
+      'Dynamic font sizing & screen reader support',
+      'Premium subscriptions via Stripe',
+    ],
+    tech: ['React Native', 'Firebase', 'Expo', 'Stripe', 'TypeScript'],
+    screenshots: [
+      '/ThoughtsWithGodSignIn.png',
+      '/ThoughtsWithGodSignUp.png',
+      '/ThoughtsWithGodHomePage.png',
+      '/ThoughtsWithGodFavoritesPage.png',
+      '/ThoughtsWithGodPrayerBoard.png',
+      '/ThoughtsWithGodBibleReader.png',
+      '/ThoughtsWithGodBiblicalDiscussions.png',
+      '/ThoughtsWithGodSubPage.png',
+      '/ThoughtsWithGodProfile1.png',
+      '/ThoughtsWithGodProfile2.png',
+    ],
+    link: 'https://github.com/tapatochips/ThoughtsWithGod',
+  },
+];
+
+const ImageCarousel = ({ screenshots, title }) => {
+  const [index, setIndex] = useState(0);
+
+  const prev = () => setIndex(i => (i === 0 ? screenshots.length - 1 : i - 1));
+  const next = () => setIndex(i => (i === screenshots.length - 1 ? 0 : i + 1));
+
+  const btnStyle = {
+    position: 'absolute',
+    top: '50%',
+    transform: 'translateY(-50%)',
+    background: 'rgba(0,0,0,0.5)',
+    color: '#fff',
+    border: 'none',
+    borderRadius: '50%',
+    width: '32px',
+    height: '32px',
+    cursor: 'pointer',
+    fontSize: '1rem',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    zIndex: 1,
+  };
+
+  return (
+    <div style={{ position: 'relative', width: '100%', height: '220px', background: '#111' }}>
+      <img
+        src={screenshots[index]}
+        alt={`${title} screenshot ${index + 1}`}
+        style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+      />
+      <button onClick={prev} style={{ ...btnStyle, left: '8px' }}>‹</button>
+      <button onClick={next} style={{ ...btnStyle, right: '8px' }}>›</button>
+      <div style={{
+        position: 'absolute',
+        bottom: '8px',
+        left: '50%',
+        transform: 'translateX(-50%)',
+        display: 'flex',
+        gap: '5px',
+      }}>
+        {screenshots.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setIndex(i)}
+            style={{
+              width: '8px',
+              height: '8px',
+              borderRadius: '50%',
+              border: 'none',
+              cursor: 'pointer',
+              padding: 0,
+              background: i === index ? '#7b93fd' : 'rgba(255,255,255,0.4)',
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const Portfolio = () => (
-    <section id="portfolio">
-        <h2 style={{ color: 'white' }}>Portfolio</h2>
-        <div className="project-cards" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '20px', padding: '20px' }}>
+  <section id="portfolio" style={{ padding: '40px 20px' }}>
+    <h2 style={{ color: 'white', marginBottom: '30px' }}>Portfolio</h2>
+    <div
+      className="project-cards"
+      style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
+        gap: '24px',
+      }}
+    >
       {projects.map(project => (
-        <div className="card" key={project.id} style={{ background: '#fff', padding: '20px', boxShadow: '0 4px 8px rgba(0,0,0,0.1)', borderRadius: '8px', textAlign: 'center' }}>
-          <img src={project.image} alt={project.title} style={{ maxWidth: '100%', height: 'auto', borderRadius: '8px 8px 0 0' }} />
-          <h3>{project.title}</h3>
-          <p>{project.description}</p>
-          <a href={project.link} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: '#007BFF', fontWeight: 'bold' }}>View Project</a>
+        <div
+          className="card"
+          key={project.id}
+          style={{
+            background: '#1e1e2e',
+            borderRadius: '12px',
+            overflow: 'hidden',
+            boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
+            display: 'flex',
+            flexDirection: 'column',
+          }}
+        >
+          <ImageCarousel screenshots={project.screenshots} title={project.title} />
+
+          <div style={{ padding: '20px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+            <h3 style={{ color: '#fff', margin: '0 0 10px', fontSize: '1.2rem' }}>
+              {project.title}
+            </h3>
+            <p style={{ color: '#a0a0b0', fontSize: '0.9rem', lineHeight: '1.6', margin: '0 0 16px' }}>
+              {project.description}
+            </p>
+
+            {/* Tech tags */}
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '16px' }}>
+              {project.tech.map(tag => (
+                <span
+                  key={tag}
+                  style={{
+                    background: '#2d2d44',
+                    color: '#7b93fd',
+                    fontSize: '0.75rem',
+                    padding: '3px 10px',
+                    borderRadius: '20px',
+                    border: '1px solid #3d3d5c',
+                  }}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            {/* Feature list */}
+            <ul style={{ color: '#a0a0b0', fontSize: '0.85rem', paddingLeft: '18px', margin: '0 0 20px', lineHeight: '1.8' }}>
+              {project.features.map(f => (
+                <li key={f}>{f}</li>
+              ))}
+            </ul>
+
+            {/* View Project button pinned to bottom */}
+            <div style={{ marginTop: 'auto' }}>
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-block',
+                  background: '#7b93fd',
+                  color: '#fff',
+                  padding: '8px 20px',
+                  borderRadius: '6px',
+                  textDecoration: 'none',
+                  fontWeight: 'bold',
+                  fontSize: '0.9rem',
+                }}
+              >
+                View Project
+              </a>
+            </div>
+          </div>
         </div>
-      ))}</div>
-    </section>
+      ))}
+    </div>
+  </section>
 );
 
 export default Portfolio;
