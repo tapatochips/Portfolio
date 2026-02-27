@@ -25,7 +25,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-    setError('');
+    setError('Email functionality is coming soon!');
 
     if (!formData.name || !formData.email || !formData.message) {
       alert('Please fill out missing fields!');
@@ -118,7 +118,7 @@ const Contact = () => {
           />
         </div>
 
-        <div className="g-recaptcha" data-sitekey="your-site-key" />
+        {/* <div className="g-recaptcha" data-sitekey="your-site-key" /> */}
 
         <button
           type="submit"
