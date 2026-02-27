@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 const projects = [
+<<<<<<< HEAD
   {
     id: 1,
     title: 'Thoughts With God',
@@ -90,6 +91,12 @@ const ImageCarousel = ({ screenshots, title }) => {
     </div>
   );
 };
+=======
+  { id: 1, title: 'Thoughts with God', description: "This is a personal app that I have made and deployed on both Apple and Google play stores", image: '/verseDisplay.png', link: '/path-to-link'},
+    { id: 2, title: 'Balance Check Calculator', description: "This app I can't show as it is for work purposes, however; it essentially is a tool to assist the billing department with their calculations for an updated amount due on past due accounts.", image: '/path-to-image1', link: '/path-to-link'},
+    
+]
+>>>>>>> 28f18688325227f81f3d58e678eb805c9275bbef
 
 const Portfolio = () => (
   <section id="portfolio" style={{ padding: '40px 20px' }}>
