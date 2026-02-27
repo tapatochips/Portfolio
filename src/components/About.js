@@ -41,7 +41,7 @@ const About = () => (
         Frameworks & Libraries
       </h3>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', justifyContent: 'center' }}>
-        {['React', 'React Native', 'MongoDB', 'Firebase', 'Express', 'Node.js', 'Jinja'].map(fw => (
+        {['React', 'React Native', 'MongoDB', 'Firebase', 'Express', 'Node.js', 'Flask', 'Jinja'].map(fw => (
           <Tag key={fw} label={fw} />
         ))}
       </div>
