@@ -28,6 +28,35 @@ const projects = [
     ],
     link: 'https://github.com/tapatochips/ThoughtsWithGod',
   },
+  {
+    id: 2,
+    title: 'Balance Check Calculator',
+    description: 'A calculator app for determining past due account balances and what is needed to bring the customer current. I am unable to provide Images of this app at this time.',
+    features: [
+      'Dynamic balance calculations based on user input',
+      'User-friendly interface for quick data entry',
+      'Responsive design for  desktop use',
+      'Exportable calculation results for record-keeping',
+    ],
+    tech: ['C#/.NET', 'SQL Server', 'Entity Framework', 'ASP.NET Core', 'JavaScript'],
+    screenshots: [
+      '',
+    ],
+    link: 'https://github.com/tapatochips/balcheckcalcweb',
+  },
+  {
+    id: 3,
+    title: 'College Work',
+    description: 'This Repo contains projects from my all of my college coursework. At this time I am unable to provide images of these projects.',
+    features: [
+      'In college I have completed projects in a variety of languages and frameworks, including Java, C++, Python, C#, SQL.',
+    ],
+    tech: ['C++', 'Java', 'Python', 'C#', 'SQL'],
+    screenshots: [
+      '',
+    ],
+    link: 'https://github.com/tapatochips/College-work',
+  },
 ];
 
 const ImageCarousel = ({ screenshots, title }) => {
