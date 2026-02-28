@@ -13,6 +13,7 @@ const App = () => {
     <div className="App">
       <Header />
       <main style={{ paddingTop: '60px' }}>
+        <Analytics />
         <Home />
         <About />
         <Portfolio />
