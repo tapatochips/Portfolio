@@ -30,6 +30,21 @@ const projects = [
   },
   {
     id: 2,
+    title: 'Inventory Management App (Android)',
+    description: 'This Repo an Android Application for small businesses to keep track of their inventory, and be notified that an item is low on stock.  This has been made in Java, to see the code feel free to click on the link!',
+    features: [
+      'In college I have completed projects in a variety of languages and frameworks, including Java, C++, Python, C#, SQL.',
+    ],
+    tech: [ 'Java'],
+    screenshots: [
+      '/MainScreenInventoryAppJava.png',
+      '/AddItemScreenInventoryAppJava.png',
+      '/SettingScreenInventoryAppJava.png',
+    ],
+    link: 'https://github.com/tapatochips/Inventory-Management-App.git',
+  },
+  {
+    id: 3,
     title: 'Balance Check Calculator',
     description: 'A calculator app for determining past due account balances and what is needed to bring the customer current. I am unable to provide Images of this app at this time.',
     features: [
@@ -45,7 +60,7 @@ const projects = [
     link: 'https://github.com/tapatochips/balcheckcalcweb',
   },
   {
-    id: 3,
+    id: 4,
     title: 'College Work',
     description: 'This Repo contains projects from my all of my college coursework. At this time I provide images of these projects down the road but feel free to review the github repo by clicking on View Project!',
     features: [
