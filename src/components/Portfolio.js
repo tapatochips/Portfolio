@@ -33,7 +33,10 @@ const projects = [
     title: 'Inventory Management App (Android)',
     description: 'This Repo an Android Application for small businesses to keep track of their inventory, and be notified that an item is low on stock.  This has been made in Java, to see the code feel free to click on the link!',
     features: [
-      'In college I have completed projects in a variety of languages and frameworks, including Java, C++, Python, C#, SQL.',
+      'Add a stock item to the inventory.',
+      'Edit existing stock items.',
+      'Delete stock items.',
+      'View low stock items.',
     ],
     tech: [ 'Java'],
     screenshots: [
@@ -45,6 +48,17 @@ const projects = [
   },
   {
     id: 3,
+    title: 'Pirate Intelligent Agent',
+    description: 'This Project contains and intelligent agent that can play the game of Pirate/Treasure Hunter, a strategic board game. The agent uses a combination of Minimax search and heuristic evaluation to make informed decisions during gameplay. The project is implemented in Python.',
+    features: [
+      'An intelligent agent that can play the game of Pirate/Treasure Hunter',
+    ],
+    tech: ['Python'],
+    screenshots: [],
+    link: 'https://github.com/tapatochips/PirateIntelligentAgent',
+  },
+  {
+    id: 4,
     title: 'Balance Check Calculator',
     description: 'A calculator app for determining past due account balances and what is needed to bring the customer current. I am unable to provide Images of this app at this time.',
     features: [
@@ -60,7 +74,7 @@ const projects = [
     link: 'https://github.com/tapatochips/balcheckcalcweb',
   },
   {
-    id: 4,
+    id: 5,
     title: 'College Work',
     description: 'This Repo contains projects from my all of my college coursework. At this time I provide images of these projects down the road but feel free to review the github repo by clicking on View Project!',
     features: [
