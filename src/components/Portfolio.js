@@ -86,6 +86,23 @@ const projects = [
     ],
     link: 'https://github.com/tapatochips/College-work',
   },
+  {
+    id: 6,
+    title: 'Inventory Management App (Android) {Kotlin}',
+    description: 'This Repo contains an Android Application for small businesses to keep track of their inventory, and be notified that an item is low on stock.  This has been  converted to Kotlin, to see the code feel free to click on the link!',
+    features: [
+      'Took existing Java code and converted it to Kotlin',
+      'Add a stock item to the inventory.',
+      'Edit existing stock items.',
+      'Delete stock items.',
+      'View low stock items.',
+    ],
+    tech: ['Kotlin'],
+    screenshots: [
+      '',
+    ],
+    link: 'https://github.com/tapatochips/Inventory-Management-App-Kotlin.git',
+  },
 ];
 
 const ImageCarousel = ({ screenshots, title }) => {
