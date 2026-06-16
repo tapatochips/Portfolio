@@ -55,7 +55,7 @@ const projects = [
     ],
     tech: ['Python'],
     screenshots: [],
-    link: 'https://github.com/tapatochips/PirateIntelligentAgent',
+    link: 'https://github.com/tapatochips/NewPirateIntelligentAgent.git',
   },
   {
     id: 4,
