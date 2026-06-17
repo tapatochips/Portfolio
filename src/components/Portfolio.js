@@ -26,7 +26,7 @@ const projects = [
       '/ThoughtsWithGodProfile1.png',
       '/ThoughtsWithGodProfile2.png',
     ],
-    link: 'https://github.com',
+    link: 'https://github.com/tapatochips/ThoughtsWithGod',
   },
   {
     id: 2,
@@ -44,7 +44,7 @@ const projects = [
       '/AddItemScreenInventoryAppJava.png',
       '/SettingScreenInventoryAppJava.png',
     ],
-    link: 'https://github.com',
+    link: 'https://github.com/tapatochips/Inventory-Management-App',
   },
   {
     id: 3,
@@ -55,7 +55,7 @@ const projects = [
     ],
     tech: ['Python'],
     screenshots: ['/PirateIntelligentAgent.png'],
-    link: 'https://github.com',
+    link: 'https://github.com/tapatochips/NewPirateIntelligentAgent',
   },
   {
     id: 4,
@@ -71,7 +71,7 @@ const projects = [
     screenshots: [
       '',
     ],
-    link: 'https://github.com',
+    link: 'https://github.com/tapatochips/balcheckcalcweb',
   },
   {
     id: 5,
@@ -84,7 +84,7 @@ const projects = [
     screenshots: [
       '',
     ],
-    link: 'https://github.com',
+    link: 'https://github.com/tapatochips/College-work',
   },
   {
     id: 6,
@@ -101,7 +101,7 @@ const projects = [
     screenshots: [
       '',
     ],
-    link: 'https://github.com',
+    link: 'https://github.com/tapatochips/Inventory-Management-App-Kotlin',
   },
   {
     id: 7,
@@ -112,7 +112,7 @@ const projects = [
     screenshots: [
       '/CodeReview%202-2%20cs499.mp4'
     ],
-    link: 'https://github.com',
+    link: 'https://github.com/tapatochips',
   },
 ];
 
