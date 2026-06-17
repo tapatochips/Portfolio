@@ -54,7 +54,7 @@ const projects = [
       'An intelligent agent that can play the game of Pirate/Treasure Hunter',
     ],
     tech: ['Python'],
-    screenshots: ['/public/PirateIntelligentAgent.png'],
+    screenshots: ['/PirateIntelligentAgent.png'],
     link: 'https://github.com/tapatochips/NewPirateIntelligentAgent.git',
   },
   {
