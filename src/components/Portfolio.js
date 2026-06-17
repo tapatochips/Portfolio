@@ -110,7 +110,7 @@ const projects = [
     features: ['I review some of the projects that I have made.'],
     tech: ['Video / Mp4'],
     screenshots: [
-      '/CodeReview-2-2-cs499.mp4'
+      '/CodeReview%202-2%20cs499.mp4'
     ],
     link: 'https://github.com',
   },
