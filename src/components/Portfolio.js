@@ -26,25 +26,25 @@ const projects = [
       '/ThoughtsWithGodProfile1.png',
       '/ThoughtsWithGodProfile2.png',
     ],
-    link: 'https://github.com/tapatochips/ThoughtsWithGod',
+    link: 'https://github.com',
   },
   {
     id: 2,
     title: 'Inventory Management App (Android)',
-    description: 'This Repo an Android Application for small businesses to keep track of their inventory, and be notified that an item is low on stock.  This has been made in Java, to see the code feel free to click on the link!',
+    description: 'This Repo an Android Application for small businesses to keep track of their inventory, and be notified that an item is low on stock. This has been made in Java, to see the code feel free to click on the link!',
     features: [
       'Add a stock item to the inventory.',
       'Edit existing stock items.',
       'Delete stock items.',
       'View low stock items.',
     ],
-    tech: [ 'Java'],
+    tech: ['Java'],
     screenshots: [
       '/MainScreenInventoryAppJava.png',
       '/AddItemScreenInventoryAppJava.png',
       '/SettingScreenInventoryAppJava.png',
     ],
-    link: 'https://github.com/tapatochips/Inventory-Management-App.git',
+    link: 'https://github.com',
   },
   {
     id: 3,
@@ -55,7 +55,7 @@ const projects = [
     ],
     tech: ['Python'],
     screenshots: ['/PirateIntelligentAgent.png'],
-    link: 'https://github.com/tapatochips/NewPirateIntelligentAgent.git',
+    link: 'https://github.com',
   },
   {
     id: 4,
@@ -64,14 +64,14 @@ const projects = [
     features: [
       'Dynamic balance calculations based on user input',
       'User-friendly interface for quick data entry',
-      'Responsive design for  desktop use',
+      'Responsive design for desktop use',
       'Exportable calculation results for record-keeping',
     ],
     tech: ['C#/.NET', 'SQL Server', 'Entity Framework', 'ASP.NET Core', 'JavaScript'],
     screenshots: [
       '',
     ],
-    link: 'https://github.com/tapatochips/balcheckcalcweb',
+    link: 'https://github.com',
   },
   {
     id: 5,
@@ -84,12 +84,12 @@ const projects = [
     screenshots: [
       '',
     ],
-    link: 'https://github.com/tapatochips/College-work',
+    link: 'https://github.com',
   },
   {
     id: 6,
     title: 'Inventory Management App (Android) {Kotlin}',
-    description: 'This Repo contains an Android Application for small businesses to keep track of their inventory, and be notified that an item is low on stock.  This has been  converted to Kotlin, to see the code feel free to click on the link!',
+    description: 'This Repo contains an Android Application for small businesses to keep track of their inventory, and be notified that an item is low on stock. This has been converted to Kotlin, to see the code feel free to click on the link!',
     features: [
       'Took existing Java code and converted it to Kotlin',
       'Add a stock item to the inventory.',
@@ -101,26 +101,28 @@ const projects = [
     screenshots: [
       '',
     ],
-    link: 'https://github.com/tapatochips/Inventory-Management-App-Kotlin.git',
+    link: 'https://github.com',
   },
   {
     id: 7,
     title: 'Self Assessment',
     description: 'A video recording of myself, assessing some of the work I have done.',
-    features: ['I review some of the proejcts that I have made.',],
+    features: ['I review some of the projects that I have made.'],
     tech: ['Video / Mp4'],
     screenshots: [
-      '/CodeReview 2-2 cs499'
-    ]
-
+      '/CodeReview 2-2 cs499.mp4'
+    ],
+    link: 'https://github.com',
   },
 ];
 
-const ImageCarousel = ({ screenshots, title }) => {
+const MediaCarousel = ({ screenshots, title }) => {
   const [index, setIndex] = useState(0);
 
-  const prev = () => setIndex(i => (i === 0 ? screenshots.length - 1 : i - 1));
-  const next = () => setIndex(i => (i === screenshots.length - 1 ? 0 : i + 1));
+  const validMedia = screenshots.filter(src => src && src.trim() !== "");
+
+  const prev = () => setIndex(i => (i === 0 ? validMedia.length - 1 : i - 1));
+  const next = () => setIndex(i => (i === validMedia.length - 1 ? 0 : i + 1));
 
   const btnStyle = {
     position: 'absolute',
@@ -137,128 +139,95 @@ const ImageCarousel = ({ screenshots, title }) => {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    zIndex: 1,
+    zIndex: 2,
   };
+
+  if (validMedia.length === 0) {
+    return (
+      <div style={{ width: '100%', height: '220px', background: '#111', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#666', fontSize: '0.85rem' }}>
+        No Media Available
+      </div>
+    );
+  }
+
+  const currentMediaSrc = validMedia[index];
+  const isVideo = currentMediaSrc.toLowerCase().endsWith('.mp4') || currentMediaSrc.toLowerCase().endsWith('.webm');
 
   return (
     <div style={{ position: 'relative', width: '100%', height: '220px', background: '#111' }}>
-      <img
-        src={screenshots[index]}
-        alt={`${title} screenshot ${index + 1}`}
-        style={{ width: '100%', height: '100%', objectFit: 'contain' }}
-      />
-      <button onClick={prev} className="carousel-btn" style={{ ...btnStyle, left: '8px' }}>‹</button>
-      <button onClick={next} className="carousel-btn" style={{ ...btnStyle, right: '8px' }}>›</button>
-      <div style={{
-        position: 'absolute',
-        bottom: '8px',
-        left: '50%',
-        transform: 'translateX(-50%)',
-        display: 'flex',
-        gap: '5px',
-      }}>
-        {screenshots.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setIndex(i)}
-            style={{
-              width: '8px',
-              height: '8px',
-              borderRadius: '50%',
-              border: 'none',
-              cursor: 'pointer',
-              padding: 0,
-              background: i === index ? '#7b93fd' : 'rgba(255,255,255,0.4)',
-            }}
-          />
-        ))}
-      </div>
+      {isVideo ? (
+        <video
+          key={currentMediaSrc}
+          src={currentMediaSrc}
+          controls
+          style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+        />
+      ) : (
+        <img
+          src={currentMediaSrc}
+          alt={`${title} screenshot ${index + 1}`}
+          style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+        />
+      )}
+
+      {validMedia.length > 1 && (
+        <>
+          <button onClick={prev} className="carousel-btn" style={{ ...btnStyle, left: '8px' }}>‹</button>
+          <button onClick={next} className="carousel-btn" style={{ ...btnStyle, right: '8px' }}>›</button>
+        </>
+      )}
+
+      {validMedia.length > 1 && (
+        <div style={{ position: 'absolute', bottom: '8px', left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: '5px', zIndex: 2 }}>
+          {validMedia.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setIndex(i)}
+              style={{
+                width: '8px',
+                height: '8px',
+                borderRadius: '50%',
+                border: 'none',
+                cursor: 'pointer',
+                padding: 0,
+                background: i === index ? '#7b93fd' : 'rgba(255,255,255,0.4)',
+              }}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
+
 const Portfolio = () => (
-  <section id="portfolio" style={{
-    background: 'linear-gradient(180deg, #111128 0%, #0d0d1a 100%)',
-    padding: '110px 40px',
-    textAlign: 'center',
-  }}>
+  <section id="portfolio" style={{ background: 'linear-gradient(180deg, #111128 0%, #0d0d1a 100%)', padding: '110px 40px', textAlign: 'center' }}>
     <h2 className="section-title">Portfolio</h2>
     <div className="section-divider" />
-    <div
-      className="project-cards"
-      style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
-        gap: '28px',
-        maxWidth: '1200px',
-        margin: '0 auto',
-      }}
-    >
+    <div className="project-cards" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '28px', maxWidth: '1200px', margin: '0 auto' }}>
       {projects.map(project => (
-        <div
-          className="card"
-          key={project.id}
-          style={{
-            background: '#16162a',
-            border: '1px solid rgba(123, 147, 253, 0.1)',
-            borderRadius: '16px',
-            overflow: 'hidden',
-            boxShadow: '0 4px 24px rgba(0,0,0,0.35)',
-            display: 'flex',
-            flexDirection: 'column',
-          }}
-        >
-          <ImageCarousel screenshots={project.screenshots} title={project.title} />
+        <div className="card" key={project.id} style={{ background: '#16162a', border: '1px solid rgba(123, 147, 253, 0.1)', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 4px 24px rgba(0,0,0,0.35)', display: 'flex', flexDirection: 'column' }}>
+
+          <MediaCarousel screenshots={project.screenshots} title={project.title} />
 
           <div style={{ padding: '20px', flex: 1, display: 'flex', flexDirection: 'column' }}>
-            <h3 style={{ color: '#fff', margin: '0 0 10px', fontSize: '1.2rem' }}>
-              {project.title}
-            </h3>
-            <p style={{ color: '#a0a0b0', fontSize: '0.9rem', lineHeight: '1.6', margin: '0 0 16px' }}>
-              {project.description}
-            </p>
+            <h3 style={{ color: '#fff', margin: '0 0 10px', fontSize: '1.2rem' }}> {project.title} </h3>
+            <p style={{ color: '#a0a0b0', fontSize: '0.9rem', lineHeight: '1.6', margin: '0 0 16px' }}> {project.description} </p>
 
-            {/* Tech tags */}
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '16px' }}>
               {project.tech.map(tag => (
-                <span
-                  key={tag}
-                  style={{
-                    background: '#2d2d44',
-                    color: '#7b93fd',
-                    fontSize: '0.75rem',
-                    padding: '3px 10px',
-                    borderRadius: '20px',
-                    border: '1px solid #3d3d5c',
-                  }}
-                >
-                  {tag}
-                </span>
+                <span key={tag} style={{ background: '#2d2d44', color: '#7b93fd', fontSize: '0.75rem', padding: '3px 10px', borderRadius: '20px', border: '1px solid #3d3d5c' }}> {tag} </span>
               ))}
             </div>
 
-            {/* Feature list */}
             <ul style={{ color: '#a0a0b0', fontSize: '0.85rem', paddingLeft: '18px', margin: '0 0 20px', lineHeight: '1.8' }}>
               {project.features.map(f => (
                 <li key={f}>{f}</li>
               ))}
             </ul>
 
-            {/* View Project button pinned to bottom */}
             <div style={{ marginTop: 'auto' }}>
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary"
-                style={{
-                  padding: '9px 22px',
-                  fontSize: '0.88rem',
-                  borderRadius: '8px',
-                }}
-              >
-                View Project
-              </a>
+              <a href={project.link} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ padding: '9px 22px', fontSize: '0.88rem', borderRadius: '8px' }}> View Project </a>
             </div>
           </div>
         </div>
