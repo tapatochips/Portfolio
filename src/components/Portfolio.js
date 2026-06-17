@@ -103,6 +103,17 @@ const projects = [
     ],
     link: 'https://github.com/tapatochips/Inventory-Management-App-Kotlin.git',
   },
+  {
+    id: 7,
+    title: 'Self Assessment',
+    description: 'A video recording of myself, assessing some of the work I have done.',
+    features: ['I review some of the proejcts that I have made.',],
+    tech: ['Video / Mp4'],
+    screenshots: [
+      '/CodeReview 2-2 cs499'
+    ]
+
+  },
 ];
 
 const ImageCarousel = ({ screenshots, title }) => {
